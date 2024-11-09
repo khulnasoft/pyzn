@@ -12,7 +12,17 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 About
+[pyzn.khulnasoft.com](https://pyzn.khulnasoft.com) is a site which aims to show statistics about Python packages.
+
+This is the repository for the backend service, if you want to check the frontend check this repo https://github.com/khulnasoft/pyzn/tree/pyzn/frontend/frontend
+
+## 💖 Sponsors
+
+We can keep alive the website thanks to you and also thanks to the following sponsors.
+
+<!-- sponsors -->
+<!-- sponsors -->
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
