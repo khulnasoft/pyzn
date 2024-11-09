@@ -1,238 +1,65 @@
-# Flask-Boilerplate
+<p align="center">
+  <img width="100px" alt="pyzn-logo"
+    src="docs/logo.png"
+  />
+</p>
 
-A Flask application template with the boilerplate code already done for you.
-
-
-**Documentation available at [http://khulnasoft.github.io/flask-boilerplate](http://khulnasoft.github.io/flask-boilerplate).**
-
-## What's included?
-
-* Blueprints
-* User and permissions management
-* Flask-SQLAlchemy for databases
-* Flask-WTF for forms
-* Flask-Assets for asset management and SCSS compilation
-* Flask-Mail for sending emails
-* gzip compression
-* Redis Queue for handling asynchronous tasks
-* ZXCVBN password strength checker
-* CKEditor for editing pages
-
-## Demos
-
-Home Page:
-
-![home](readme_media/home.gif "home")
-
-Registering User:
-
-![registering](readme_media/register.gif "register")
-
-Admin Editing Page:
-
-![edit page](readme_media/editpage.gif "editpage")
-
-Admin Editing Users:
-
-![edit user](readme_media/edituser.gif "edituser")
+<h2 align="center"><code>PyZn</code></h2>
 
 
-## Setting up
 
-##### Create your own repository from this Template
+## 📜 About
+[pyzn.tech](https://pyzn.tech) is a site which aims to show statistics about Python packages.
 
-Navigate to the [main project page](https://github.com/khulnasoft/flask-boilerplate) and click the big, green "Use this template" button at the top right of the page. Give your new repository a name and save it.
+This is the repository for the backend service, if you want to check the frontend check this repo https://github.com/khulnasoft/pyzn-front
 
-##### Clone the repository 
+## 💖 Sponsors
 
-```
-$ git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-$ cd REPO_NAME
+We can keep alive the website thanks to you and also thanks to the following sponsors.
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=7bf782110d6c&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
+<!-- sponsors --><a href="https://github.com/samuelcolvin"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;4039449?u&#x3D;42eb3b833047c8c4b4f647a031eaef148c16d93f&amp;v&#x3D;4" width="60px" alt="Samuel Colvin" /></a><a href="https://github.com/sethmlarson"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;18519037?u&#x3D;41090cc65ae0a34aee49c7a35cfbd40e2e12eb53&amp;v&#x3D;4" width="60px" alt="Seth Michael Larson" /></a><a href="https://github.com/pavdmyt"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;10200820?u&#x3D;a470afb0d60b966be8b046d78f3a4401cbce0987&amp;v&#x3D;4" width="60px" alt="Pavel Dmytrenko" /></a><a href="https://github.com/SermetPekin"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;96650846?u&#x3D;441ab17ab6c7b1c0690e755d46d33b0259b498f5&amp;v&#x3D;4" width="60px" alt="Sermet Pekin" /></a><!-- sponsors -->
+
+## ⚒️ Start contributing
+I wanted to make the setup of the environment as easy as possible. To start the environment you need the 
+following prerequisites:
+
+### Prerequisites
+  * bash (+4.3)
+  * docker (+17.05)
+  * docker-compose (+1.16.1)
+  * docker-py (+2.2.1)
+  * ansible (+2.3)
+  
+### Start environment
+You only (_fingers crossed_) need to execute the following to start the environment:
+
+```commandline
+make start-containers
 ```
 
-##### Initialize a virtual environment
-
-Windows:
-```
-$ python3 -m venv venv
-$ venv\Scripts\activate.bat
-```
-
-Unix/MacOS:
-```
-$ python3 -m venv venv
-$ source venv/bin/activate
-```
-Learn more in [the documentation](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
-
-Note: if you are using a python before 3.3, it doesn't come with venv. Install [virtualenv](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv) with pip instead.
-
-##### (If you're on a Mac) Make sure xcode tools are installed
-
-```
-$ xcode-select --install
-```
-
-##### Add Environment Variables
-
-Create a file called `config.env` that contains environment variables. **Very important: do not include the `config.env` file in any commits. This should remain private.** You will manually maintain this file locally, and keep it in sync on your host.
-
-Variables declared in file have the following format: `ENVIRONMENT_VARIABLE=value`. You may also wrap values in double quotes like `ENVIRONMENT_VARIABLE="value with spaces"`.
-
-1. In order for Flask to run, there must be a `SECRET_KEY` variable declared. Generating one is simple with Python 3:
-
-   ```
-   $ python3 -c "import secrets; print(secrets.token_hex(16))"
-   ```
-
-   This will give you a 32-character string. Copy this string and add it to your `config.env`:
-
-   ```
-   SECRET_KEY=Generated_Random_String
-   ```
-
-2. The mailing environment variables can be set as the following.
-   We recommend using [Sendgrid](https://sendgrid.com) for a mailing SMTP server, but anything else will work as well.
-
-   ```
-   MAIL_USERNAME=SendgridUsername
-   MAIL_PASSWORD=SendgridPassword
-   ```
-
-Other useful variables include:
-
-| Variable        | Default   | Discussion  |
-| --------------- |-------------| -----|
-| `ADMIN_EMAIL`   | `flask-boilerplate-admin@example.com` | email for your first admin account |
-| `ADMIN_PASSWORD`| `password`                     | password for your first admin account |
-| `DATABASE_URL`  | `data-dev.sqlite`              | Database URL. Can be Postgres, sqlite, etc. |
-| `REDISTOGO_URL` | `http://localhost:6379`        | [Redis To Go](https://redistogo.com) URL or any redis server url |
-| `RAYGUN_APIKEY` | `None`                         | API key for [Raygun](https://raygun.com/raygun-providers/python), a crash and performance monitoring service |
-| `FLASK_CONFIG`  | `default`                      | can be `development`, `production`, `default`, `heroku`, `unix`, or `testing`. Most of the time you will use `development` or `production`. |
-
-
-##### Install the dependencies
-
-```
-$ pip install -r requirements.txt
-```
-
-##### Other dependencies for running locally
-
-You need [Redis](http://redis.io/), and [Sass](http://sass-lang.com/). Chances are, these commands will work:
-
-
-**Sass:**
-
-```
-$ gem install sass
-```
-
-**Redis:**
-
-_Mac (using [homebrew](http://brew.sh/)):_
-
-```
-$ brew install redis
-```
-
-_Linux:_
-
-```
-$ sudo apt-get install redis-server
-```
-
-You will also need to install **PostgresQL**
-
-_Mac (using homebrew):_
-
-```
-brew install postgresql
-```
-
-_Linux (based on this [issue](https://github.com/khulnasoft/flask-boilerplate/issues/96)):_
-
-```
-sudo apt-get install libpq-dev
-```
-
-
-##### Create the database
-
-```
-$ python manage.py recreate_db
-```
-
-##### Other setup (e.g. creating roles in database)
-
-```
-$ python manage.py setup_dev
-```
-
-Note that this will create an admin user with email and password specified by the `ADMIN_EMAIL` and `ADMIN_PASSWORD` config variables. If not specified, they are both `flask-boilerplate-admin@example.com` and `password` respectively.
-
-##### [Optional] Add fake data to the database
-
-```
-$ python manage.py add_fake_data
-```
-
-## Running the app
-
-```
-$ source env/bin/activate
-$ honcho start -e config.env -f Local
-```
-
-For Windows users having issues with binding to a redis port locally, refer to [this issue](https://github.com/khulnasoft/flask-boilerplate/issues/132).
-
-## Gettin up and running with Docker and docker-compose:
-
-##### Clone the repository 
-```
-$ git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-$ cd REPO_NAME
-```
-##### Create and run the images:
-
-```
-$ docker-compose up
-```
-
-##### Create database and initial data for development:
-
-```
-$ docker-compose exec server ./init_database.sh
-```
-
-It will deploy 5 docker images:
-
-- server: Flask app running in [http://localhost:5000](http://localhost:5000).
-- worker: Worker ready to get tasks.
-- postgres: Postgres SQL isolated from the app.
-- adminer: Web client for database management, running in [http://localhost:8080](http://localhost:8080).
-- redis: Redis SQL isolated from the app
-
-
-## Formatting code
-
-Before you submit changes to flask-boilerplate, you may want to autoformat your code with `python manage.py format`.
-
-
-## Contributing
-
-Contributions are welcome! Please refer to our [Code of Conduct](./CONDUCT.md) for more information.
-
-## Documentation Changes
-
-To make changes to the documentation refer to the [Mkdocs documentation](http://www.mkdocs.org/#installation) for setup.
-
-To create a new documentation page, add a file to the `docs/` directory and edit `mkdocs.yml` to reference the file.
-
-When the new files are merged into `master` and pushed to github. Run `mkdocs gh-deploy` to update the online documentation.
-
-## Related
-https://medium.freecodecamp.com/how-we-got-a-2-year-old-repo-trending-on-github-in-just-48-hours-12151039d78b#.se9jwnfk5
-
-## License
-[MIT License](LICENSE.md)
+## Architecture and patterns
+Principally I used some DDD concepts (like value objects, entities, and so on) and also CQS whose objective is to
+separate commands from queries.
+
+The structure of the code is the following:
+  * `pyzn/application`: here is where all the commands and the queries are located.
+  * `pyzn/domain`: domain objects like entities, exceptions, and value objects.
+  * `pyzn/infrastructure`: infrastructure components like the implementation of the repository
+    class like DB or BigQuery, the Flask web application, the container, and so on.
+    * `pyzn/infrastructure/cli`: the command line programs.
+    * `pyzn/infrastructure/container`: config files and the dependency injection manager.
+    * `pyzn/infrastructure/api`: the api endpoints controller.
+    
+## FAQ
+**Where the downloads come from?**
+
+The data is retrieved from the official BigQuery repository: https://packaging.python.org/guides/analyzing-pypi-package-downloads/
+
+**When the data is updated?**
+
+There is a cron that runs every day at 5 pm UTC that retrieves all the new downloads from the previous day.
+
+## 🚩 License
+The code is available under the [MIT license](LICENSE.md).
