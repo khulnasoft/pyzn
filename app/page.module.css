@@ -1,0 +1,13 @@
+.root {
+}
+
+.header {
+  text-align: center;
+}
+
+.main {
+  margin-top: 80px;
+  max-width: 780px;
+  margin-right: auto;
+  margin-left: auto;
+}
