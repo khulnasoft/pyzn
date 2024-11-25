@@ -2,10 +2,6 @@
 
 This is the repository for the backend service, if you want to check the frontend check this repo https://github.com/khulnasoft/pyzn-front
 
-## 💖 Sponsors
-
-<!-- sponsors --><a href="https://github.com/samuelcolvin"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;4039449?u&#x3D;42eb3b833047c8c4b4f647a031eaef148c16d93f&amp;v&#x3D;4" width="60px" alt="Samuel Colvin" /></a><a href="https://github.com/sethmlarson"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;18519037?u&#x3D;41090cc65ae0a34aee49c7a35cfbd40e2e12eb53&amp;v&#x3D;4" width="60px" alt="Seth Michael Larson" /></a><a href="https://github.com/pavdmyt"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;10200820?u&#x3D;a470afb0d60b966be8b046d78f3a4401cbce0987&amp;v&#x3D;4" width="60px" alt="Pavel Dmytrenko" /></a><a href="https://github.com/SermetPekin"><img src="https:&#x2F;&#x2F;avatars.githubusercontent.com&#x2F;u&#x2F;96650846?u&#x3D;441ab17ab6c7b1c0690e755d46d33b0259b498f5&amp;v&#x3D;4" width="60px" alt="Sermet Pekin" /></a><!-- sponsors -->
-
 ## ⚒️ Start contributing
 I wanted to make the setup of the environment as easy as possible. To start the environment you need the 
 following prerequisites:
