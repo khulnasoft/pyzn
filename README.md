@@ -1,15 +1,7 @@
-<p align="center">
-  <img width="100px" alt="pyzn-logo"
-    src="docs/logo.png"
-  />
-</p>
-
-<h2 align="center"><code>PyZn</code></h2>
-
-
+# PyZn
 
 ## 📜 About
-[pyzn.tech](https://pyzn.tech) is a site which aims to show statistics about Python packages.
+[pyzn.khulnasoft.com](https://pyzn.khulnasoft.com) is a site which aims to show statistics about Python packages.
 
 This is the repository for the backend service, if you want to check the frontend check this repo https://github.com/khulnasoft/pyzn-front
 
