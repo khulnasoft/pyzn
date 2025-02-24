@@ -16,9 +16,7 @@ def cli():
 
 
 @cli.command("import:downloads:day")
-@click.option(
-    "--day", help="The day to import downloads", default=lambda: os.environ.get("PYZN_DOWNLOADS_DAY", "")
-)
+@click.option("--day", help="The day to import downloads", default=lambda: os.environ.get("PYZN_DOWNLOADS_DAY", ""))
 def import_day_downloads_action(day: Optional[str]):
     try:
         date = datetime.now() - timedelta(days=1)
